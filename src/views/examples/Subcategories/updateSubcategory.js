@@ -40,6 +40,7 @@ class CreateCategory extends React.Component {
       mainCategoryList: null,
       subcategoryName: "",
       subcategoryStatus: "Active",
+      subCategory_description: "",
       subcategoryImg: undefined,
       fileInputState: "",
       subcategoryEdit: false,
@@ -59,6 +60,7 @@ class CreateCategory extends React.Component {
         subCategory_image,
         pdf,
         mainCategory,
+        subCategory_description,
         _id,
       } = updateCategory;
 
@@ -68,6 +70,7 @@ class CreateCategory extends React.Component {
         subCategory_image: subCategory_image,
         pdf: pdf,
         mainCategory: mainCategory,
+        subCategory_description: subCategory_description,
         isUpdateMod: true,
         _id: _id,
       });
@@ -126,6 +129,10 @@ class CreateCategory extends React.Component {
     formData.append("subCategory_name", this.state.subCategory_name);
     formData.append("subCategory_slug", this.state.subCategory_slug);
     formData.append("subCategory_image", this.state.subCategory_image);
+    formData.append(
+      "subCategory_description",
+      this.state.subCategory_description
+    );
     formData.append("pdf", this.state.pdf);
     formData.append("mainCategory", this.getId());
     formData.append("_id", this.state._id);
@@ -151,6 +158,7 @@ class CreateCategory extends React.Component {
       isUpdateMod,
       mainCategoryList,
       image,
+      subCategory_description,
       loader,
     } = this.state;
     return (
@@ -227,11 +235,30 @@ class CreateCategory extends React.Component {
                                 />
                               </FormGroup>
                             </Col>
+
                             <Col md="6">
                               <img
                                 src={image ? image : subCategory_image}
                                 style={{ width: "45%" }}
                               />
+                            </Col>
+
+                            <Col md="6">
+                              <FormGroup>
+                                <label
+                                  className="form-control-label"
+                                  htmlFor="input-address"
+                                >
+                                  Product Description
+                                </label>
+                                <Input
+                                  id="fileInput"
+                                  type="textarea"
+                                  name="subCategory_description"
+                                  onChange={this.changeHandle.bind(this)}
+                                  value={subCategory_description}
+                                />
+                              </FormGroup>
                             </Col>
                           </Row>
                         </CardBody>

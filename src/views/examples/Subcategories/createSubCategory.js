@@ -31,6 +31,7 @@ class CreateCategory extends React.Component {
       subCategory_slug: "",
       subCategory_image: null,
       pdf: "",
+      subCategory_description: "",
       loader: false,
       mainCategory: "",
     };
@@ -72,6 +73,11 @@ class CreateCategory extends React.Component {
     formData.append("subCategory_name", this.state.subCategory_name);
     formData.append("subCategory_slug", this.state.subCategory_slug);
     formData.append("subCategory_image", this.state.subCategory_image);
+    formData.append(
+      "subCategory_description",
+      this.state.subCategory_description
+    );
+
     formData.append("pdf", this.state.pdf);
     formData.append("mainCategory", this.getId());
 
@@ -110,13 +116,13 @@ class CreateCategory extends React.Component {
   };
 
   render() {
-    console.log(this.state.mainCategoryList);
     const {
       mainCategoryList,
       subCategory_name,
       subCategory_slug,
       mainCategory,
       isEditMod,
+      subCategory_description,
       loader,
     } = this.state;
     return (
@@ -180,7 +186,7 @@ class CreateCategory extends React.Component {
                           <Row
                             style={{ display: "flex", alignItems: "center" }}
                           >
-                            <Col md="10">
+                            <Col md="12">
                               <FormGroup>
                                 <label
                                   className="form-control-label"
@@ -194,6 +200,24 @@ class CreateCategory extends React.Component {
                                   type="file"
                                   name="subCategory_image"
                                   onChange={this.onImageChange}
+                                />
+                              </FormGroup>
+                            </Col>
+
+                            <Col md="12">
+                              <FormGroup>
+                                <label
+                                  className="form-control-label"
+                                  htmlFor="input-address"
+                                >
+                                  Product Description
+                                </label>
+                                <Input
+                                  id="fileInput"
+                                  type="textarea"
+                                  name="subCategory_description"
+                                  onChange={this.changeHandle.bind(this)}
+                                  value={subCategory_description}
                                 />
                               </FormGroup>
                             </Col>
