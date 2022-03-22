@@ -229,7 +229,7 @@ class CreateCategory extends React.Component {
                                   className="form-control-label"
                                   htmlFor="input-address"
                                 >
-                                  Product Creative Image
+                                  Product Creative Imageee
                                 </label>
                                 <CustomInput
                                   id="fileInput"

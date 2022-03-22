@@ -24,6 +24,8 @@ import Swatches from "../src/views/examples/swatches/swatches";
 import CreateSwatches from "../src/views/examples/swatches/createSwatch";
 import UpdateSwatches from "../src/views/examples/swatches/updateSwatch";
 import Banners from "../src/views/examples/Banners/banner";
+import Services from "../src/views/examples/Services/services";
+
 var routes = [
   // {
   //   path: "/index",
@@ -144,6 +146,14 @@ var routes = [
     name: "Banners",
     icon: "ni ni-planet text-blue",
     component: Banners,
+    layout: "/admin",
+  },
+
+  {
+    path: "/services",
+    name: "Services",
+    icon: "ni ni-planet text-blue",
+    component: Services,
     layout: "/admin",
   },
 

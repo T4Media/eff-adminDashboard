@@ -152,7 +152,7 @@ class Tables extends React.Component {
                     style={{ textAlign: "center" }}
                   >
                     <tr>
-                      <th scope="col">ID</th>
+                      {/* <th scope="col">ID</th> */}
                       <th scope="col">Product Name</th>
                       <th scope="col">Subcategory Name</th>
                       <th scope="col">Product Creative Image</th>
@@ -160,17 +160,19 @@ class Tables extends React.Component {
                       <th scope="col">More</th>
                     </tr>
                   </thead>
-                  <tbody style={{ textAlign: "center" }}>
+                  <tbody
+                    className="product-names"
+                    style={{ textAlign: "center" }}
+                  >
                     {products.data &&
                       products.data.p.map((v, x) => {
-                        console.log(v, "V");
                         return (
                           <tr key={x}>
-                            <td>{v._id}</td>
-                            <th scope="row">{v.product_name}</th>
-                            <th scope="row">
+                            {/* <td>{v._id}</td> */}
+                            <td scope="row">{v.product_name}</td>
+                            <td scope="row">
                               {v.subCategory.subCategory_name}
-                            </th>
+                            </td>
                             <td>
                               <a onClick={(e) => e.preventDefault()}>
                                 <img
