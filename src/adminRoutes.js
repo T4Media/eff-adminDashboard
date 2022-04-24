@@ -3,15 +3,6 @@ import Login from "views/examples/Login.js";
 import subCategories from "views/examples/Subcategories/Subcategories";
 import CreateCategory from "views/examples/CreateCategory";
 import CategoryDetail from "views/examples/CategoryDetails";
-import Users from "./views/examples/Users";
-import Payment from "./views/examples/Payment";
-import OrderList from "./views/examples/OrderList";
-import Help from "./views/examples/HelpScreen";
-import ReferDiscount from "./views/examples/referDiscount";
-import BecomeVendor from "views/examples/BecomeVendor";
-import CreateVendor from "views/examples/CreateVendor";
-import ApproveVendor from "views/examples/ApproveVendor";
-import VendorProducts from "views/examples/vendor_products";
 import MainCategories from "views/examples/MainCategory/MainCategories";
 import CreateMainCategory from "views/examples/MainCategory/CreateMainCategory";
 import UpdateCategory from "../src/views/examples/MainCategory/updateMainCategory";
@@ -25,6 +16,8 @@ import CreateSwatches from "../src/views/examples/swatches/createSwatch";
 import UpdateSwatches from "../src/views/examples/swatches/updateSwatch";
 import Banners from "../src/views/examples/Banners/banner";
 import Services from "../src/views/examples/Services/services";
+import About from "../src/views/examples/About/about";
+import Careers from "views/examples/Careers/careers";
 
 var routes = [
   // {
@@ -154,6 +147,21 @@ var routes = [
     name: "Services",
     icon: "ni ni-planet text-blue",
     component: Services,
+    layout: "/admin",
+  },
+
+  {
+    path: "/careers",
+    name: "Careers",
+    icon: "ni ni-planet text-blue",
+    component: Careers,
+    layout: "/admin",
+  },
+  {
+    path: "/about",
+    name: "About",
+    icon: "ni ni-planet text-blue",
+    component: About,
     layout: "/admin",
   },
 

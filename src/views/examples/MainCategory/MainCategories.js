@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Card,
   CardHeader,
@@ -22,7 +22,6 @@ import { get, post, _delete } from "../../../request/request";
 import Header from "components/Headers/Header.js";
 import MainCategoryDetail from "./MainCategoriesDetail";
 import "../../index.css";
-import { useDispatch } from "react-redux";
 import { addMainCategories } from "services/redux/slices/apiData";
 
 class Tables extends React.Component {
@@ -139,7 +138,6 @@ class Tables extends React.Component {
                     style={{ textAlign: "center" }}
                   >
                     <tr>
-                      <th scope="col">ID</th>
                       <th scope="col">Category Name</th>
                       <th scope="col">More</th>
                     </tr>
@@ -149,7 +147,6 @@ class Tables extends React.Component {
                       console.log(v, "V");
                       return (
                         <tr key={x}>
-                          <td>{v._id}</td>
                           <th scope="row">{v.category_name}</th>
 
                           <th>

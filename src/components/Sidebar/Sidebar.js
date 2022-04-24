@@ -24,6 +24,9 @@ import {
   Col,
 } from "reactstrap";
 
+import seirra from "../../assets/img/logo/sierra.png";
+import { height } from "@mui/system";
+
 class Sidebar extends React.Component {
   state = {
     collapseOpen: false,
@@ -104,13 +107,13 @@ class Sidebar extends React.Component {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          {logo ? (
+          {seirra ? (
             <NavbarBrand className="pt-0" {...navbarBrandProps}>
               <img
-                style={{ maxHeight: "10rem" }}
+                style={{ width: "100%", maxHeight: "9rem" }}
                 alt={logo.imgAlt}
                 className="navbar-brand-img"
-                src={logo1}
+                src={seirra}
               />
             </NavbarBrand>
           ) : null}

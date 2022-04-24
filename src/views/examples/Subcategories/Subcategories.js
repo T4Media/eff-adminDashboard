@@ -131,7 +131,6 @@ class Tables extends React.Component {
                     style={{ textAlign: "center" }}
                   >
                     <tr>
-                      <th scope="col">ID</th>
                       <th scope="col">Category Name</th>
                       <th scope="col">Main Category</th>
                       <th scope="col">Image</th>
@@ -143,7 +142,6 @@ class Tables extends React.Component {
                       console.log(v, "V");
                       return (
                         <tr key={x}>
-                          <td>{v._id}</td>
                           <th scope="row">{v.subCategory_name}</th>
                           <th scope="row">{v.mainCategory.category_name}</th>
                           <td>

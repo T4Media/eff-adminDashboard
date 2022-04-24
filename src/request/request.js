@@ -1,16 +1,16 @@
 const axios = require("axios");
-// const base_uel = "https://deltrix.herokuapp.com/"
-// const base_uel = "https://deltrix-ecommerce.herokuapp.com/";
-// const base_uel = "http://localhost:8000/"; //  #=> #=> #=> LOCALHOST
-const base_uel = "http://54.183.217.110/";
+const base_uel = "http://localhost:8000/"; //  #=> #=> #=> LOCALHOST
 // http://localhost:3000/admin/Products
 export const post = (body, url) => {
-  console.log(body);
   return new Promise((resolve, reject) => {
     axios
-      .post(base_uel + url, body)
+      .post(base_uel + url, body, {
+        headers: {
+          auth: JSON.parse(localStorage.getItem("currentUser")),
+        },
+      })
       .then((response) => resolve(response))
-      .catch((error) => reject(error));
+      .catch((error) => reject(error.response));
   });
 };
 
@@ -26,7 +26,11 @@ export const get = (url) => {
 export const put = (body, url) => {
   return new Promise((resolve, reject) => {
     axios
-      .put(base_uel + url, body)
+      .put(base_uel + url, body, {
+        headers: {
+          auth: JSON.parse(localStorage.getItem("currentUser")),
+        },
+      })
       .then((response) => resolve(response))
       .catch((error) => reject(error));
   });
@@ -35,7 +39,15 @@ export const put = (body, url) => {
 export const _delete = (_id, url) => {
   return new Promise((resolve, reject) => {
     axios
-      .delete(base_uel + url, { data: { _id: _id } })
+      .delete(
+        base_uel + url,
+        { data: _id },
+        {
+          headers: {
+            auth: JSON.parse(localStorage.getItem("currentUser")),
+          },
+        }
+      )
       .then((response) => resolve(response))
       .catch((error) => reject(error));
   });
